@@ -23,7 +23,7 @@ func boxarraypopulator() [16][16]rl.Rectangle {
 	i1 := 0
 	i2 := 0
 
-	for i1 != 15 {
+	for i1 != 16 {
 		if i2 < 16 {
 			boxarr[i2][i1] = box
 
@@ -31,7 +31,7 @@ func boxarraypopulator() [16][16]rl.Rectangle {
 
 			i2++
 		}
-		if i2 > 15 {
+		if i2 == 16 {
 			i2 = 0
 			i1++
 			box.X = 605
@@ -79,19 +79,33 @@ func recarrdraw(arr [16][16]rl.Rectangle, crr [16][16]rl.Color) {
 	i1 := 0
 	i2 := 0
 
-	for i2 != 15 {
+	// for i2 != 15 {
 
-		if i1 > 15 {
-			i1 = 0
-			i2++
-		}
+	// 	if i1 > 15 {
+	// 		i1 = 0
+	// 		i2++
+	// 	}
 
-		if i1 < 16 {
+	// 	if i1 < 16 {
 
-			rl.DrawRectangleRec(arr[i1][i2], crr[i1][i2])
+	// 		rl.DrawRectangleRec(arr[i1][i2], crr[i1][i2])
+
+	// 		i1++
+	// 	}
+
+	// }
+
+	for i1 != 15 {
+
+		if i2 == 16 {
+
+			i2 = 0
 
 			i1++
 		}
 
+		rl.DrawRectangleRec(arr[i2][i1], crr[i2][i1])
+
+		i2++
 	}
 }
