@@ -1,4 +1,4 @@
-module spine
+module newspine
 
 go 1.17
 
